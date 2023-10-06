@@ -1,13 +1,259 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* background: linear-gradient(to right, #f1f3f5, #e9ecef); */
+  background-color: #ced4da;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 800px;
+  height: 600px;
+  background-color: #dee2e6;
+  box-shadow: 15px 15px 50px 40px rgba(255, 255, 255, 0.5), -15px -15px 50px 40px rgba(255, 255, 255, 0.5);
+
+  margin: 0 auto;
+  border-radius: 12px;
+  /* background: linear-gradient(to left, #fdedfc, #fafee3); */
+}
+
+h1,
+h2 {
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+label {
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+p {
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  width: 340px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ********************** */
+/* ********************** */
+/* ****** phonebook wrapper ******** */
+/* ********************** */
+/* ********************** */
+
+.phonebook-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 300px;
+}
+
+/* ********************** */
+/* ********************** */
+/* ****** contacts wrapper ******** */
+/* ********************** */
+/* ********************** */
+
+.contacts-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  width: 300px;
+}
+
+/* ********************** */
+/* ********************** */
+/* ****** CONTACT FORM ******** */
+/* ********************** */
+/* ********************** */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 4px;
+}
+
+.contact-form input {
+  padding: 8px 24px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #111;
+}
+
+.contact-form input:hover {
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus-within {
+  outline: 1px solid rgba(143, 152, 212, 0.658);
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input::placeholder {
+  overflow: hidden;
+  color: #777;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.contact-btn {
+  margin-top: 12px;
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #2982ff;
+  transition: 0.3s;
+
+  color: #F8F8F8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.contact-btn:hover {
+  background-color: #5199fe;
+}
+
+.contact-btn:active {
+  transform: translateY(2px);
+}
+
+/* ********************** */
+/* ********************** */
+/* ****** FILTER ******** */
+/* ********************** */
+/* ********************** */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.filter input {
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #050505;
+}
+
+.filter input:hover {
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.filter input:focus-within {
+  outline: 1px solid rgba(212, 143, 143, 0.658);
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.filter input::placeholder {
+  overflow: hidden;
+  color: #777;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ********************** */
+/* ********************** */
+/* ****** CONTACT LIST ******** */
+/* ********************** */
+/* ********************** */
+
+.contact-menu {
+  margin-top: 12px;
+}
+
+.contact-list {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-list button {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ff2929;
+  transition: 0.3s;
+
+  color: #F8F8F8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.contact-list button:hover {
+  background-color: #fe4f4f;
+}
+
+.contact-list button:active {
+  transform: translateY(2px);
 }
