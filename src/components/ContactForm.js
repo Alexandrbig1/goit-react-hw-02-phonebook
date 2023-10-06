@@ -9,6 +9,10 @@ const ContactForm = () => {
 
     const newValue = { contact, phoneNumber };
 
+    if (!contact || !phoneNumber) {
+      return;
+    }
+
     alert(JSON.stringify(newValue));
 
     setContact("");
@@ -33,7 +37,11 @@ const ContactForm = () => {
         placeholder="123 45 6789"
         value={phoneNumber}
         onChange={(e) =>
-          setPhoneNumber(+e.target.value === 0 ? "" : +e.target.value)
+          setPhoneNumber(
+            typeof e.target.value === "string"
+              ? e.target.value
+              : +e.target.value
+          )
         }
         required
       />
