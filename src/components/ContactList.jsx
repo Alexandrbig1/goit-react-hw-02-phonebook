@@ -6,7 +6,7 @@ const ContactList = () => {
           <ListText lalaa={lalala} />
         ))} */}
         <p>
-          Contact name: <span>777-12-12</span>
+          John Doe: <span>123 45 6789</span>
         </p>
         <button>Delete</button>
       </li>
