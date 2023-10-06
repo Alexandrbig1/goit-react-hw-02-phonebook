@@ -65,7 +65,7 @@ p {
   font-style: normal;
   font-weight: 600;
   line-height: 1.28;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .wrapper {
@@ -223,6 +223,9 @@ p {
 
 .contact-menu {
   margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .contact-list {
@@ -256,4 +259,8 @@ p {
 
 .contact-list button:active {
   transform: translateY(2px);
+}
+
+.contacts-wrapper {
+  display: flex;
 }

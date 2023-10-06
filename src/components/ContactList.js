@@ -1,6 +1,14 @@
 const ContactList = () => {
   return (
     <ul className="contact-menu">
+      <List />
+    </ul>
+  );
+};
+
+function List() {
+  return (
+    <>
       <li className="contact-list">
         {/* {lalala.map((item) => (
           <ListText lalaa={lalala} />
@@ -10,9 +18,18 @@ const ContactList = () => {
         </p>
         <button>Delete</button>
       </li>
-    </ul>
+      <li className="contact-list">
+        {/* {lalala.map((item) => (
+          <ListText lalaa={lalala} />
+        ))} */}
+        <p>
+          Alex Cardo: <span>123 45 6789</span>
+        </p>
+        <button>Delete</button>
+      </li>
+    </>
   );
-};
+}
 
 // function ListText(props) {
 //   return (
