@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ContactForm = () => {
+function ContactForm({ onFormSubmit }) {
   const [contact, setContact] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -13,12 +13,11 @@ const ContactForm = () => {
       return;
     }
 
-    alert(JSON.stringify(newValue));
+    onFormSubmit(newValue);
 
     setContact("");
     setPhoneNumber("");
   }
-
   return (
     <form onSubmit={HandleSubmit} className="contact-form">
       <label htmlFor="name">Name</label>
@@ -48,6 +47,6 @@ const ContactForm = () => {
       <button className="contact-btn">Add contact</button>
     </form>
   );
-};
+}
 
 export default ContactForm;
