@@ -16,7 +16,9 @@ function App() {
   }
 
   function onInputHandler(e) {
-    console.log(e);
+    setContacts((contact) =>
+      contact.filter((item) => item.contact.includes(e))
+    );
   }
   // state = {
   //   contacts: "",
