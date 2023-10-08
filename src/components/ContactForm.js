@@ -7,12 +7,11 @@ function ContactForm({ onFormSubmit }) {
   function HandleSubmit(e) {
     e.preventDefault();
 
-    const newValue = { contact, phoneNumber };
+    const newValue = { contact, phoneNumber, id: Date.now() };
 
     if (!contact || !phoneNumber) {
       return;
     }
-
     onFormSubmit(newValue);
 
     setContact("");

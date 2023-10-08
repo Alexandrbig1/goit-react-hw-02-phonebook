@@ -37,6 +37,7 @@ p {
   margin: 0 auto;
   border-radius: 12px;
   /* background: linear-gradient(to left, #fdedfc, #fafee3); */
+  position: relative;
 }
 
 h1,
@@ -77,6 +78,23 @@ p {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 40px;
+  color: inherit;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #2982ff;
 }
 
 /* ********************** */

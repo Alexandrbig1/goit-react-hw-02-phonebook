@@ -5,12 +5,19 @@ import { useState } from "react";
 
 function App() {
   const [contacts, setContacts] = useState([]);
+  const [isOpen, setIsOpen] = useState(true);
 
   function onFormSubmit(contact) {
     setContacts((contacts) => [...contacts, contact]);
   }
 
-  function onDeleteHandler(contactName) {}
+  function onDeleteHandler(id) {
+    setContacts((contact) => contact.filter((item) => item.id !== id));
+  }
+
+  function onInputHandler(e) {
+    console.log(e);
+  }
   // state = {
   //   contacts: "",
   //   number: "",
@@ -24,17 +31,27 @@ function App() {
 
   return (
     <div className="container">
-      <div className="wrapper">
-        <div className="phonebook-wrapper">
-          <h1>Phonebook</h1>
-          <ContactForm onFormSubmit={onFormSubmit} />
-        </div>
+      <div className="wrapper" style={isOpen === true ? {} : { padding: "0" }}>
+        <button className="close" onClick={() => setIsOpen(!isOpen)}>
+          &times;
+        </button>
+        {isOpen && (
+          <>
+            <div className="phonebook-wrapper">
+              <h1>Phonebook</h1>
+              <ContactForm onFormSubmit={onFormSubmit} />
+            </div>
 
-        <div className="contacts-wrapper">
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList contacts={contacts} onDeleteHandler={onDeleteHandler} />
-        </div>
+            <div className="contacts-wrapper">
+              <h2>Contacts</h2>
+              <Filter contacts={contacts} onInputHandler={onInputHandler} />
+              <ContactList
+                contacts={contacts}
+                onDeleteHandler={onDeleteHandler}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

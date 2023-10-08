@@ -9,14 +9,16 @@ function ContactList({ contacts, onDeleteHandler }) {
 function List({ contacts, onDeleteHandler }) {
   return (
     <>
-      {contacts.map(({ contact, phoneNumber }) => (
-        <li key={contact} className="contact-list">
-          <p>
-            {contact}: <span>{phoneNumber}</span>
-          </p>
-          <button onClick={() => onDeleteHandler(contact)}>Delete</button>
-        </li>
-      ))}
+      {contacts.map(({ contact, phoneNumber, id }) => {
+        return (
+          <li key={id} className="contact-list" id={id}>
+            <p>
+              {contact}: <span>{phoneNumber}</span>
+            </p>
+            <button onClick={() => onDeleteHandler(id)}>Delete</button>
+          </li>
+        );
+      })}
     </>
   );
 }
