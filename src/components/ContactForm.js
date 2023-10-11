@@ -1,17 +1,18 @@
 import { useState } from "react";
 
-function ContactForm({ onFormSubmit }) {
+export default function ContactForm({ onFormSubmit }) {
   const [contact, setContact] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   function HandleSubmit(e) {
     e.preventDefault();
 
-    const newValue = { contact, phoneNumber, id: Date.now() };
+    const newValue = { contact, phoneNumber, id: crypto.randomUUID() };
 
     if (!contact || !phoneNumber) {
       return;
     }
+
     onFormSubmit(newValue);
 
     setContact("");
@@ -30,7 +31,7 @@ function ContactForm({ onFormSubmit }) {
       />
       <label htmlFor="number">Number</label>
       <input
-        type="tel"
+        type="text"
         name="number"
         placeholder="123 45 6789"
         value={phoneNumber}
@@ -47,5 +48,3 @@ function ContactForm({ onFormSubmit }) {
     </form>
   );
 }
-
-export default ContactForm;

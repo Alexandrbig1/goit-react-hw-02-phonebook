@@ -1,4 +1,4 @@
-const Filter = ({ contacts, onInputHandler }) => {
+export default function Filter({ onInputHandler }) {
   return (
     <div className="filter">
       <label htmlFor="search">Find contacts by name</label>
@@ -12,6 +12,4 @@ const Filter = ({ contacts, onInputHandler }) => {
       />
     </div>
   );
-};
-
-export default Filter;
+}

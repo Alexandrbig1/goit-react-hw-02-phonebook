@@ -1,26 +1,38 @@
-function ContactList({ contacts, onDeleteHandler }) {
+import List from "./List";
+
+export default function ContactList({
+  contacts,
+  onDeleteHandler,
+  filteredContacts,
+  searchTerm,
+}) {
   return (
     <ul className="contact-menu">
-      <List contacts={contacts} onDeleteHandler={onDeleteHandler} />
+      {filteredContacts.length === 0 && searchTerm.length > 0 ? (
+        <li className="contact-list">No matching contacts found</li>
+      ) : filteredContacts.length > 0 ? (
+        filteredContacts.map(({ contact, phoneNumber, id }) => (
+          <List
+            key={id}
+            id={id}
+            contact={contact}
+            phoneNumber={phoneNumber}
+            onDeleteHandler={onDeleteHandler}
+          />
+        ))
+      ) : contacts.length !== 0 ? (
+        contacts.map(({ contact, phoneNumber, id }) => (
+          <List
+            key={id}
+            id={id}
+            contact={contact}
+            phoneNumber={phoneNumber}
+            onDeleteHandler={onDeleteHandler}
+          />
+        ))
+      ) : (
+        ""
+      )}
     </ul>
   );
 }
-
-function List({ contacts, onDeleteHandler }) {
-  return (
-    <>
-      {contacts.map(({ contact, phoneNumber, id }) => {
-        return (
-          <li key={id} className="contact-list" id={id}>
-            <p>
-              {contact}: <span>{phoneNumber}</span>
-            </p>
-            <button onClick={() => onDeleteHandler(id)}>Delete</button>
-          </li>
-        );
-      })}
-    </>
-  );
-}
-
-export default ContactList;
