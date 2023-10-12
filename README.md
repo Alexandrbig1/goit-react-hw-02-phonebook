@@ -1,4 +1,4 @@
-# Phonebook
+# **Phonebook**
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 doing homework while studying in bootcamp @GoIT on Fullstack developer course
